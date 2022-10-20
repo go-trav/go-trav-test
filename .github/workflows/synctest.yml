@@ -10,14 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - name: Sync-Fork-action
-       uses: XueMoMo/Sync-Fork-action@v1.0.6
+     - name: Auto sync your fork upstream
+      # You may pin to the exact commit or the version.
+      # uses: rovast/sync-upstream-repo@f87d4f3467cc312809e50ebfc8a1977b2b518ad1
+       uses: rovast/sync-upstream-repo@v0.0.1
        with:
-          # Token for accessing the remote repo with authentication
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Upstream repository, e.g. => aormsby/Fork-Sync-With-Upstream-action
-          upstream_repository: go-trav/go-trav
-          # Branch to sync from, e.g. => main, master, dev
+          # URL of gitHub public upstream repo
+          upstream_repo: https://github.com/go-trav/go-trav
+          # Branch to merge from upstream (defaults to downstream branch)
           upstream_branch: main
-          # Branch to push to, e.g. => main, master, prod
-          target_branch: main
+          # Branch to merge into downstream
+          downstream_branch: main
+          # GitHub Bot token
+          token: ${{ secrets.GITHUB_TOKEN }}
