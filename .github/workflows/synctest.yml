@@ -1,0 +1,21 @@
+name: "Sync Test"
+
+on:
+  push:
+    # The branches below must be a subset of the branches above
+    branches: [ "main" ]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Sync Fork with Upstream
+      uses: AbdulmelikKalkan/sync-fork-upstream@v1.3
+      with:
+        # The account owner of the repository.
+        owner: go-trav
+        # The name of the repository.
+        repo: https://github.com/go-trav/go-trav-test
+        # The name of the branch which should be updated to match upstream.
+        branch: main
