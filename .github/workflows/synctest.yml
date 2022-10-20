@@ -9,6 +9,8 @@ jobs:
       runs-on: ubantu-latest
       
       steps: 
+        - uses: actions/checkout@v2
+        
         - name: Sync and merge test repo
           uses: dabreadman/sync-upstream-repo@v1.3.0
           with:
