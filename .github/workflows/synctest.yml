@@ -10,12 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Sync Fork with Upstream
-      uses: AbdulmelikKalkan/sync-fork-upstream@v1.3
-      with:
-        # The account owner of the repository.
-        owner: go-trav
-        # The name of the repository.
-        repo: https://github.com/go-trav/go-trav-test
-        # The name of the branch which should be updated to match upstream.
-        branch: main
+     - name: Sync-Fork-action
+       uses: XueMoMo/Sync-Fork-action@v1.0.6
+       with:
+          # Token for accessing the remote repo with authentication
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Upstream repository, e.g. => aormsby/Fork-Sync-With-Upstream-action
+          upstream_repository: https://github.com/go-trav/go-trav/
+          # Branch to sync from, e.g. => main, master, dev
+          upstream_branch: main
+          # Branch to push to, e.g. => main, master, prod
+          target_branch: main
