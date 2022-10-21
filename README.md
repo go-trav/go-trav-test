@@ -39,7 +39,7 @@ Clone the repository
 
 # Deployment
 
-Netlify using Github Actions
+Terraform using Github Actions
 
 # Workflow
 
