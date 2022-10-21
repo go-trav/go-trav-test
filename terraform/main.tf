@@ -25,8 +25,6 @@ data "aws_iam_policy_document" "website_policy" {
   }
 }
 
-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
-
 resource "aws_s3_bucket" "s3Bucket" {
      bucket = "gotrav"
      acl       = "public-read"
